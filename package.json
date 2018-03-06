@@ -5,7 +5,6 @@
   "dependencies": {
     "@vx/curve": "^0.0.153",
     "@vx/event": "^0.0.153",
-    "@vx/gradient": "^0.0.153",
     "@vx/scale": "^0.0.153",
     "@vx/shape": "^0.0.158",
     "@vx/tooltip": "^0.0.158",

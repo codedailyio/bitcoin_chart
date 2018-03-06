@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import { Line, Bar, LinePath } from "@vx/shape";
-import { curveLinear } from "@vx/curve";
-import { scaleTime, scaleLinear } from "@vx/scale";
 import { withTooltip, Tooltip } from "@vx/tooltip";
 import { localPoint } from "@vx/event";
+import { scaleTime, scaleLinear } from "@vx/scale";
 import { extent, max, bisector } from "d3-array";
 import { timeFormat } from "d3-time-format";
 
-const formatDate = timeFormat("%b %d, '%y");
 const width = window.innerWidth;
 const height = window.innerHeight;
 
+const formatDate = timeFormat("%b %d, '%y");
 const xSelector = d => new Date(d.date);
 const ySelector = d => d.price;
-const bisectDate = bisector(d => new Date(d.date)).left;
+
+const bisectDate = bisector(xSelector).left;
 
 class App extends Component {
   state = {
@@ -50,24 +50,26 @@ class App extends Component {
       tooltipTop: yScale(ySelector(d)),
     });
   };
+
   render() {
     const { data } = this.state;
-    const { showTooltip, hideTooltip, tooltipData, tooltipTop, tooltipLeft, events } = this.props;
+    const { showTooltip, hideTooltip, tooltipData, tooltipTop, tooltipLeft } = this.props;
 
     if (!data) return null;
 
     const padding = 100;
     const xMax = width - padding;
     const yMax = height - padding;
-    // scales
+
     const xScale = scaleTime({
       range: [padding, xMax],
       domain: extent(data, xSelector),
     });
+
+    const dataMax = max(data, ySelector);
     const yScale = scaleLinear({
       range: [yMax, padding],
-      domain: [0, max(data, ySelector) + yMax / 3],
-      nice: true,
+      domain: [0, dataMax + dataMax / 3],
     });
 
     return (
@@ -84,7 +86,6 @@ class App extends Component {
             stroke="#FFF"
             strokeLinecap="round"
             fill="transparent"
-            curve={curveLinear}
           />
           <Bar
             x={0}
@@ -92,24 +93,7 @@ class App extends Component {
             width={width}
             height={height}
             fill="transparent"
-            rx={14}
             data={data}
-            onTouchStart={data => event =>
-              this.handleTooltip({
-                event,
-                data,
-                xSelector,
-                xScale,
-                yScale,
-              })}
-            onTouchMove={data => event =>
-              this.handleTooltip({
-                event,
-                data,
-                xSelector,
-                xScale,
-                yScale,
-              })}
             onMouseMove={data => event =>
               this.handleTooltip({
                 event,
@@ -119,6 +103,15 @@ class App extends Component {
                 yScale,
               })}
             onMouseLeave={data => event => hideTooltip()}
+            onTouchEnd={data => event => hideTooltip()}
+            onTouchMove={data => event =>
+              this.handleTooltip({
+                event,
+                data,
+                xSelector,
+                xScale,
+                yScale,
+              })}
           />
           {tooltipData && (
             <g>

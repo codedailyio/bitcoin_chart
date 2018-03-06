@@ -1,5 +1,5 @@
 ## Intro
-Interactive charts can seem intimdating. They were for me, and some still are but after spending time diving into them for work I've learned they aren't as intimidating. There are a few key concepts we'll go over that helped me unlock visualizations. It was the AHA! moment that I needed and I hope to teach you as well.
+Interactive charts can seem intimidating. They were for me, and some still are but after spending time diving into them for work I've learned they aren't as intimidating. There are a few key concepts we'll go over that helped me unlock visualizations. It was the AHA! moment that I needed and I hope to teach you as well.
 
 This is what we're building, check out the [Live Demo](https://codesandbox.io/s/github/codedailyio/bitcoin_chart) before you dive in.
 

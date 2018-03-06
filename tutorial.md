@@ -3,7 +3,7 @@ Interactive charts can seem intimdating. They were for me, and some still are bu
 
 This is what we're building, check out the [Live Demo](https://codesandbox.io/s/github/codedailyio/bitcoin_chart) before you dive in.
 
-![](http://images.codedaily.io/lessons/bitcoin_chart/Demo.gif)
+![](https://images.codedaily.io/lessons/bitcoin_chart/Demo.gif)
 
 ## Setup
 
@@ -131,7 +131,7 @@ render() {
 
 So great. We now have a blank green square all setup taking up the entire screen!
 
-![](http://images.codedaily.io/lessons/bitcoin_chart/BlankSquare.png)
+![](https://images.codedaily.io/lessons/bitcoin_chart/BlankSquare.png)
 
 ## Setup Data Processors
 
@@ -262,7 +262,7 @@ render() {
 }
 ```
 
-![](http://images.codedaily.io/lessons/bitcoin_chart/LinePath.png)
+![](https://images.codedaily.io/lessons/bitcoin_chart/LinePath.png)
 
 ## Bar to Catch Mouse Movements
 
@@ -304,11 +304,11 @@ import { Bar, LinePath } from "@vx/shape";
 ```
 Now the reason we add this `Bar` in is so that we have an entire area to catch our mouse movements.
 If we attached them to the `LinePath` we'd only get them when they are directly with in the bounds of our line like so. You can see that is a very limited area.
-![](http://images.codedaily.io/lessons/bitcoin_chart/LineHover.png)
+![](https://images.codedaily.io/lessons/bitcoin_chart/LineHover.png)
 
 If we place them on our `Bar` we get the entire area of mouse movement events and can generate a much better experience for our users.
 
-![](http://images.codedaily.io/lessons/bitcoin_chart/BarHover.png)
+![](https://images.codedaily.io/lessons/bitcoin_chart/BarHover.png)
 
 
 ## Tooltip Handler
@@ -544,5 +544,5 @@ The [vx](vx-demo.now.sh) library adds a nice mix between helping you render data
 If you want to play with it live you can check out the [Live Demo](https://codesandbox.io/s/github/codedailyio/bitcoin_chart)
 
 
-![](http://images.codedaily.io/lessons/bitcoin_chart/FinalChart.png)
+![](https://images.codedaily.io/lessons/bitcoin_chart/FinalChart.png)
 

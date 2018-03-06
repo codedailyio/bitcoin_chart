@@ -481,7 +481,7 @@ import { Line, Bar, LinePath } from "@vx/shape";
 )}
 ```
 
-Then outside our SVG we render our tooltips. This is a `div` that has some styling and is absolutely positioned. We provide the first `Tooltip` with our `price` and position it where our data point is (minus some offset so it doesn't cover our circle) and provide some addtional styling.
+Then outside our SVG we render our tooltips. This is a `div` that has some styling and is absolutely positioned. We provide the first `Tooltip` with our `price` and position it where our data point is (minus some offset so it doesn't cover our circle) and provide some additional styling.
 
 Same goes for our `Tooltip` to render our date. We pass in our `tooltipData` to our `xSelector` then to a `formateDate` function we created. This uses the `timeFormat` from D3 to take a date and render it in a human readable fashion.
 

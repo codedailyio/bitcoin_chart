@@ -453,7 +453,7 @@ Inside our SVG we want to render a `Line` indicating what data point we are at. 
 
 The `x` for both will be at the same point because we're rendering at a specific spot horizontally. We then need to tell our `Line` to stretch from the top to the bottom. We do that using `0` for the top and our `yMax` as the bottom of the svg.
 
-We also render a circle at the specific data point on the line. Both `Line` and our `cirlce` have some general styling applied. This can be changed by you to meet whatever your styling desires are. Notice also we're not rendering any text values, just shapes.
+We also render a circle at the specific data point on the line. Both `Line` and our `circle` have some general styling applied. This can be changed by you to meet whatever your styling desires are. Notice also we're not rendering any text values, just shapes.
 
 ```js
 import { Line, Bar, LinePath } from "@vx/shape";
